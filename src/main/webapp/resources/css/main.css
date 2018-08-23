@@ -1,0 +1,238 @@
+/*메인화면 이미지 class*/
+.di50_i {width: 50%; height: 400px; background-size: cover;}
+
+/*메인화면 빠른 바로가기 버튼 class*/
+.main_btn{
+    width: 200px;
+    height: 50px;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00be33;
+}
+.main_btn:hover{
+    color: #00be33;
+    border: 2px solid #00be33;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+/*팝업창 class*/
+.hidden_box{
+    z-index: 1;
+    left: 25px;
+    position: fixed;
+    box-shadow: 0 0 1px rgba(76,86,103,.25), 0 5px 18px rgba(31,37,50,.32);
+}
+
+/*body 상단*/
+section {
+    height: 400px;
+}
+#s1 #s1_d {
+    width: calc(50% - 40px);
+    height: 360px;
+    padding: 20px;
+    background: -moz-linear-gradient(left, #f1f1f1 50%, #d1d1d1);
+    background: -webkit-gradient(linear, 50% 0, 100% 0, from(#f1f1f1), to(#d1d1d1));
+    background: -webkit-linear-gradient(left, #f1f1f1 50%, #d1d1d1);
+    background: -o-linear-gradient(left, #f1f1f1 50%, #d1d1d1);
+    background: linear-gradient(to right, #f1f1f1 50%, #d1d1d1);
+}
+#s1 #s1_i_d {
+    background-image: url(../img/mainmovieimg1.jpeg);
+    background-position: center;
+}
+#s1 #s1_i_d::before {
+    display: block;
+    position: relative;
+    background-image: -moz-linear-gradient(right, rgba(255, 255, 255, 0) 60%, #d1d1d1); /*FF 3.6+*/
+    background-image: -webkit-gradient(linear, 40% 0, 0 0, from(rgba(255, 255, 255, 0)), to(#d1d1d1)); /*Safari 4+, Chrome 2+*/
+    background-image: -webkit-linear-gradient(right, rgba(255, 255, 255, 0) 60%, #d1d1d1); /*Safari 5.1+, Chrome 10+*/
+    background-image: -o-linear-gradient(right, rgba(255, 255, 255, 0) 60%, #d1d1d1); /*Opera 11.10*/
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0) 60%, #d1d1d1); /*Standard, IE10*/
+    height: 100%;
+    width: 100%;
+    content: "";
+}
+#s2 #s2_d{
+    width: calc(50% - 75px);
+    height: 250px;
+    padding: 75px 0 75px 75px;
+    background: -moz-linear-gradient(right, #f1f1f1 50%, #fff7e8);
+    background: -webkit-gradient(linear, 50% 0, 0 0, from(#f1f1f1), to(#fff7e8));
+    background: -webkit-linear-gradient(right, #f1f1f1 50%, #fff7e8);
+    background: -o-linear-gradient(right, #f1f1f1 50%, #fff7e8);
+    background: linear-gradient(to left, #f1f1f1 50%, #fff7e8);
+}
+#s2 #s2_i_d {
+    background-image: url(../img/mainmovieimg2.jpg);
+    background-position: center;
+}
+#s2 #s2_i_d::after {
+    display: block;
+    position: relative;
+    background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 80%, #fff7e8);
+    background-image: -webkit-gradient(linear, 80% 0, 100% 0, from(rgba(255, 255, 255, 0)), to(#fff7e8)); 
+    background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 80%, #fff7e8);
+    background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0) 80%, #fff7e8);
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 80%, #fff7e8);
+    height: 100%;
+    width: 100%;
+    content: "";
+}
+#s3 #s3_d{
+    width: calc(50% - 20px);
+    height: 250px;
+    padding: 75px 0 75px 20px;
+    background: -moz-linear-gradient(left, #f1f1f1 50%, #dcdaff);
+    background: -webkit-gradient(linear, 50% 0, 100% 0, from(#f1f1f1), to(#dcdaff));
+    background: -webkit-linear-gradient(left, #f1f1f1 50%, #dcdaff);
+    background: -o-linear-gradient(left, #f1f1f1 50%, #dcdaff);
+    background: linear-gradient(to right, #f1f1f1 50%, #dcdaff);
+}
+#s3 #s3_i_d {
+    background-image: url(../img/mainmovieimg3.png);
+    background-position: center;
+}
+#s3 #s3_i_d::before {
+    display: block;
+    position: relative;
+    background-image: -moz-linear-gradient(right, rgba(255, 255, 255, 0) 60%, #dcdaff);
+    background-image: -webkit-gradient(linear, 40% 0, 0 0, from(rgba(255, 255, 255, 0)), to(#dcdaff));
+    background-image: -webkit-linear-gradient(right, rgba(255, 255, 255, 0) 60%, #dcdaff);
+    background-image: -o-linear-gradient(right, rgba(255, 255, 255, 0) 60%, #dcdaff);
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0) 60%, #dcdaff);
+    height: 100%;
+    width: 100%;
+    content: "";
+}
+
+/*body 하단*/
+#s4 div ul {
+    padding: 0;
+    height: 100%;
+}
+#s4 #s4_d1 {
+    width: calc(70% - 20px);
+    height: 250px;
+    padding: 75px 0 75px 20px;
+}
+#s4 #s4_d1 #top_movielist li {
+    width: calc((100% / 3) - 50px);
+    margin: 20px 50px 0 0;
+    height: 80%;
+    text-align: left;
+}
+#s4 #s4_d1 #top_movielist li:hover {
+    cursor: pointer;
+}
+#s4 #s4_d1 #top_movielist li div {
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+#s4 #s4_d1 #top_movielist li h3 {
+    width: calc(50% - 10px);
+    margin-left: 10px;
+    height: 20%;
+}
+#s4 #s4_d1 #top_movielist li p {
+    width: calc(50% - 10px);
+    margin-left: 10px;
+    height: 80%;
+}
+#s4 #s4_d2 {
+    width: calc(30% - 20px);
+    height: 250px;
+    padding: 75px 0 75px 20px;
+}
+#s4 #s4_d2 #top_contributor li {
+    color: cadetblue;
+    margin-top: 15px;
+}
+
+/*footer*/
+footer {
+    width: 100%;
+    height: 200px;
+    background-color: #2fc658;
+}
+footer #fimg {
+    width: calc(1500px / 8);
+    height: calc(350px / 8);
+    background-size: cover;
+    background-image: url(../img/logo_footer.png);
+    margin: 25px 0;
+}
+footer #ftxt {
+    margin-left: 10px;
+    color: white;
+}
+
+/*팝업창*/
+#feedback {
+    bottom: -360px;
+    width: 350px;
+    height: 300px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 5px;
+}
+#feedback p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+#feedback form p {
+    color: red;
+    display: none;
+}
+#feedback input {
+    width: 326px;
+    height: 30px;
+    padding: 1px 10px;
+    margin-bottom: 10px;
+    color: #333;
+}
+#feedback textarea {
+    padding: 8px 10px;
+    resize: none;
+    width: 328px;
+    height: 84px;
+    margin-bottom: 10px;
+    color: #333;
+}
+#feedback button {
+    width: 160px;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 10px;
+    background-color: #00be33;
+}
+#feedback button:hover {
+    cursor: pointer;
+    background-color: #006d1d;
+}
+#thankyou {
+    text-align: center;
+    bottom: -140px;
+    width: 180px;
+    height: 60px;
+    padding: 30px 15px;
+    font-weight: bolder;
+    border-radius: 10px;
+    background-color: white;
+    border: 5px solid #00be33;
+}
+#thankyou h3 {
+    margin: 20px 0;
+    color: #00be33;
+}
+#thankyou h3:hover {
+    cursor: pointer;
+}

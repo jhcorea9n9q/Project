@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel='shortcut icon' href="img/icon.png">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/main.js"></script>
+<script>
+$(document).ready(function(){
+    indexjs();
+});
+</script>
+</head>
+<body>
+<header id="mainhead" class="bc_w dp_i f_l give_pad">
+    <a id="headlogo" class="dp_i" href="main.html"></a>
+</header>
+<ul id="mainli" class="dp_i f_l give_pad">
+    <li id="page1" class="f_l"><a href="stats.html"></a></li>
+    <li id="page2" class="f_l"><a href="review.html"></a></li>
+    <li id="page3" class="f_r"><a href="signup.html"></a></li>
+    <li id="page4" class="f_r"><a href="login.html"></a></li>
+    <li id="page5" class="f_r"><a href="mypage.html"></a></li>
+    <span id="cg_lan" class="bc_w f_r"><p></p></span>
+</ul>
+<section id="s1" class="dp_i f_l give_pad">
+    <div id="s1_d" class="dp_i f_l"><br>
+        <h1></h1><br><br>
+        <article>
+            <b>what is GOODEE MOVIE?</b><br><br>
+            <p></p>
+        </article><br><br>
+        <button id="s1_b" class="main_btn" type="button"> check now! </button>
+    </div>
+    <div id="s1_i_d" class="dp_i f_r di50_i"></div>
+</section>
+<section id="s2" class="dp_i f_l give_pad">
+    <div id="s2_i_d" class="dp_i f_l di50_i"></div>
+    <div id="s2_d" class="dp_i f_r">
+        <article>
+            <b>Movie Community</b><br><br>
+            <p></p>
+        </article><br><br><br>
+        <button id="s2_b" class="main_btn" type="button"> review now! </button>
+    </div>
+</section>
+<section id="s3" class="dp_i f_l give_pad">
+    <div id="s3_d" class="dp_i f_l">
+        <article>
+            <b>Give FeedBack</b><br><br>
+            <p></p>
+        </article><br><br><br>
+        <button id="s3_b" class="main_btn" type="button"> feedback now! </button>
+    </div>
+    <div id="s3_i_d" class="dp_i f_r di50_i"></div>
+</section><br>
+<section id="s4" class="dp_i f_l give_pad">
+    <div id="s4_d1" class="dp_i f_l">
+        <b><p></p></b>
+        <ul id="top_movielist">
+            <li class="f_l">
+                <div class="dp_i f_l"></div>
+                <h3 class="dp_i f_l"></h3>
+                <p class="dp_i f_l"></p>
+            </li>
+            <li class="f_l">
+                <div class="dp_i f_l"></div>
+                <h3 class="dp_i f_l"></h3>
+                <p class="dp_i f_l"></p>
+            </li>
+            <li class="f_l">
+                <div class="dp_i f_l"></div>
+                <h3 class="dp_i f_l"></h3>
+                <p class="dp_i f_l"></p>
+            </li>
+        </ul>
+    </div>
+    <div id="s4_d2" class="dp_i f_l di50">
+        <b><p></p></b>
+        <ul id="top_contributor">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</section>
+<div id="feedback" class="hidden_box">
+    <p id="fd_req" class="dp_i f_l"></p>
+    <form class="dp_i f_l">
+        <input type="email" name="fb_email" placeholder="" maxlength="40"><br>
+        <p></p>
+        <input type="text" name="fb_title" placeholder="" maxlength="50"><br>
+        <p></p>
+        <textarea name="fb_main" placeholder="" maxlength="300"></textarea><br>
+        <p></p>
+        <button type="submit"></button>
+        <button class="f_r" id="can_btn" type="button"></button>
+    </form>
+</div>
+<div id="thankyou" class="hidden_box">
+    <p></p>
+    <h3>OK</h3>
+</div>
+<footer class="dp_i f_l give_pad">
+    <div id="fimg"></div>
+    <div id="ftxt">
+        <p>GooDee Movie is a BigData&Spring framework project</p>
+        <p>version 1.0 2018.08.13</p>
+        <p>copyright @ ljh 2018</p>
+    </div>
+</footer>
+</body>
+</html>

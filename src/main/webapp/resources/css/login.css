@@ -1,0 +1,41 @@
+section {
+    height: calc(100vh - 180px);
+    min-height: 600px;
+}
+section > h2 {
+    margin-top: 30px;
+}
+section > p > span > a {
+    color: #00be33;
+    font-weight: bold;
+    text-decoration: none;
+}
+form {
+    width: calc(100% - 30px);
+    margin: 40px 15px;
+}
+form p {
+    margin-left: 20%;
+    margin-top: 10px;
+}
+form input {
+    width: calc(60% - 4px);
+    height: 40px;
+    margin: 20px 20%;
+    font-size: 25px;
+}
+form button {
+    width: 200px;
+    height: 50px;
+    margin-top: 50px;
+    margin-left: calc(50% - 100px);
+    border-radius: 15px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    background-color: #00be33;
+}
+form button:hover {
+    cursor: pointer;
+    background-color: #006d1d;
+}

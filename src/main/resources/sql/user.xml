@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="user">
+	<!-- 닉네임 & 이메일 중복체크 -->
+	<select id="idCheck" parameterType="HashMap" resultType="HashMap">
+		select
+		if(exists(
+			select `userEmail` from userlist where `userEmail` = #{email} and `userDelYn` = 'N' ),1,
+		if(exists(
+			select `nickName` from userlist where `nickName`= #{nick} and `userDelYn` = 'N' ),2,0)
+		) as 'check'
+	</select>
+	
+	<!-- 회원가입 -->
+	<insert id="sign_up" parameterType="HashMap">
+		insert into userlist (`userEmail`,`nickName`,`password`,`getMail`)
+		values (#{email},#{nick},#{pwd},#{getMail})
+	</insert>
+	
+	<!-- 로그인 -->
+	<select id="tryLogin" parameterType="HashMap" resultType="HashMap">
+		select * from userlist
+		where (`userEmail` = #{id} or `nickName` = #{id})
+		and `password` = #{pwd}
+		and `userDelYn` = 'N'
+		limit 1
+	</select>
+	
+	<!-- 계정정보 변경 -->
+	<update id="chID" parameterType="HashMap">
+		update userlist
+			set `userEmail` = #{email}, `nickName` = #{nick}
+		where `userNo` = #{userNo} and `userDelYn` = 'N'
+	</update>
+	
+	<!-- 비밀번호 변경 -->
+	<update id="chPWD" parameterType="HashMap">
+		update userlist
+			set `password` = #{pwd}
+		where `userNo` = #{userNo} and `userDelYn` = 'N'
+	</update>
+	
+	<!-- 알림 설정 -->
+	<update id="chGetMail" parameterType="HashMap">
+		update userlist
+			set `getMail` = #{getMail}
+		where `userNo` = #{userNo} and `userDelYn` = 'N'
+	</update>
+	
+	<!-- 계정 삭제 -->
+	<update id="delUser" parameterType="HashMap">
+		update userlist
+			set `userDelYn` = 'Y'
+		where `userNo` = #{userNo} and `userDelYn` = 'N'
+	</update>
+</mapper>

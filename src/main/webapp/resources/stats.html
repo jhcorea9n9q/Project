@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> 영화통계 </title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/stats.css">
+<link rel='shortcut icon' href="img/icon.png">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/html2canvas.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/stats.js"></script>
+<script>
+$(document).ready(function(){
+    stajs();
+});
+</script>
+</head>
+<body>
+<header id="mainhead" class="bc_w dp_i f_l give_pad">
+    <a id="headlogo" class="dp_i" href="main.html"></a>
+</header>
+<ul id="mainli" class="dp_i f_l give_pad">
+    <li id="page1" class="f_l"><a href="stats.html"></a></li>
+    <li id="page2" class="f_l"><a href="review.html"></a></li>
+    <li id="page3" class="f_r"><a href="signup.html"></a></li>
+    <li id="page4" class="f_r"><a href="login.html"></a></li>
+    <li id="page5" class="f_r"><a href="mypage.html"></a></li>
+    <span id="cg_lan" class="bc_w f_r"><p></p></span>
+</ul>
+<section id="selsec" class="dp_i f_l give_pad">
+    <!--[통계(영화수)]
+    합산 / 비율
+    연도별 / 국가별 / 장르별
+    연월.
+    
+    [TOP]
+    연월별 인기순위
+    장르별 인기순위 + 연월
+    성공한 영화 / 실패한 영화 + 연월-->
+    <div id="selCharTp" class="dp_i f_l give_pad">
+        <button type="button" class="dp_i f_l" class="dp_i f_l">영화 합산 통계</button>
+        <button type="button" class="dp_i f_l" class="dp_i f_l">영화 비율 통계</button>
+        <button type="button" class="dp_i f_l">분류별 TOP 10 LIST</button>
+    </div>
+    
+</section>
+<section id="charsec" class="dp_i f_l give_pad">
+    
+</section>
+</body>
+</html>

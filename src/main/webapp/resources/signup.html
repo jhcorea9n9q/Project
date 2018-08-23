@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/signup.css">
+<link rel='shortcut icon' href="img/icon.png">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/signup.js"></script>
+<script>
+$(document).ready(function(){
+    signjs();
+});    
+</script>
+</head>
+<body>
+<header id="mainhead" class="bc_w dp_i f_l give_pad">
+    <a id="headlogo" class="dp_i" href="main.html"></a>
+</header>
+<ul id="mainli" class="dp_i f_l give_pad">
+    <li id="page1" class="f_l"><a href="stats.html"></a></li>
+    <li id="page2" class="f_l"><a href="review.html"></a></li>
+    <li id="page3" class="f_r"><a href="signup.html"></a></li>
+    <li id="page4" class="f_r"><a href="login.html"></a></li>
+    <li id="page5" class="f_r"><a href="mypage.html"></a></li>
+    <span id="cg_lan" class="bc_w f_r"><p></p></span>
+</ul>
+<section id="welcome_goodee" class="dp_i f_l give_pad">
+    <div id="wel_head" class="dp_i f_l">
+        <span class="f_l"></span>
+        <h2 class="dp_i f_l"></h2>
+    </div>
+    <div id="wel_main" class="dp_i f_l wel_nothead">
+        <p id="wel_mess"></p>
+        <div id="terms1"></div>
+        <input id="agree1" type="checkbox">
+        <label for="agree1"></label>
+        <br>
+        <div id="terms2"></div>
+        <input id="agree2" type="checkbox">
+        <label for="agree1"></label>
+        <br>
+    </div>
+    <div id="wel_btn" class="dp_i f_l wel_nothead">
+        <button class="dp_i f_l signbtns sign_ok" type="button"></button>
+        <button class="dp_i f_l signbtns sign_no" type="button"></button>
+    </div>
+</section>
+<section id="sign_mainsec" class="dp_i f_l give_pad">
+    <form id="sign_input">
+        <p></p>
+        <input type="email" name="email" id="email" class="not_check" maxlength="40" required><br>
+        <p></p>
+        <input type="text" name="nick" id="nick" class="not_check" maxlength="15" required><br>
+        <p></p>
+        <input type="password" name="pwd" id="pwd" class="not_check" maxlength="15" required><br>
+        <p></p>
+        <input type="password" name="pwd_check" id="pwd_check" class="not_check" maxlength="15" required><br>
+        <input type="checkbox" name="email_agree" id="email_agree">
+        <label for="email_agree"></label><br><br>
+        <div>
+            <button class="dp_i f_l signbtns sign_ok" type="submit"></button>
+            <button class="dp_i f_l signbtns sign_no" type="button"></button>
+        </div>
+    </form>
+</section>
+</body>
+</html>

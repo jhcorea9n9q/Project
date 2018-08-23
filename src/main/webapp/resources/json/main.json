@@ -1,0 +1,46 @@
+{"mainH1" : [
+    "GOODEE MOVIE에 오신 것을 환영합니다!!", 
+    "GOODEE MOVIEへようこそ！！"
+    ],
+ "divData" : [
+     ["구디무비에서는 2017년까지 수집된 45,000개 영화의 빅데이터를 통해,<br>각종 통계를 확인하는 것이 가능합니다.<br><br>장르, 언어, 인기순위, 수익 등에 이르기까지,<br>각종 테마에 따라 분류되는 영화 통계들을 직접 확인하십시오.",
+      "GOODEE MOVIEでは，2017年まで集められた45,000個に至る映画の<br>ビックデータを活用した様々な統計を確認することができます。<br><br>ジャンル，言語，人気順，受益などの，<br>多様なテーマによって分類された映画の統計をその目で確かめてください。"],
+     ["리뷰를 올려 타 회원들과 토론해봅시다.<br><br>또한 자신만의 평점을 올릴 수도 있습니다.",
+      "映画レビューを作成し，コミュニティーで議論してみましょう。<br><br>また自分だけの評点をつけることもできます。"],
+     ["사이트 개선을 위해 피드백을 주십시오.<br><br>여러분의 도움으로 더 나은 사이트가 만들어집니다.",
+      "サイト改善のために，フィードバックをお願いします。<br><br>みな様の助力が，より良いサイトを作っていきます。"]
+ ],
+ "div2Data" : [
+     ["추천영화",
+      "推薦映画"],
+     ["우수 리뷰어",
+      "優秀レビュアー"]
+ ],
+ "reco" : [
+     {"URL":"rhIRbceoE9lR4veEXuwCC2wARtG.jpg","Rank":"Rank No.1","Title":"Toy Story"},{"URL":"rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg","Rank":"Rank No.2","Title":"The Lord of the Rings: The Return of the King"},{"URL":"6sASqcdrEHXxUhA3nFpjrRecPD2.jpg","Rank":"Rank No.3","Title":"Harry Potter and the Goblet of Fire"}
+ ],
+ "cont" : [
+     {"contributor":"Hanseo Cho","count":"11590"},{"contributor":"Sewoong Lee","count":"9170"},{"contributor":"Shim Hyeunseop","count":"6760"},{"contributor":"Chris Metzen","count":"3190"},{"contributor":"Kobayashi","count":"1112"}
+ ],
+ "feedback" : [
+     {"fd_request":"사이트 기능 제안, 버그 신고, 기타 의견을 남겨주세요.",
+      "fd_email":"이메일 주소",
+      "fd_title":"제목",
+      "fd_main":"피드백 내용을 입력해 주세요.",
+      "fd_submit":"발송","fd_cancel":"취소",
+      "fd_email_er":"올바른 이메일 주소를 입력해 주십시오.",
+      "fd_title_er":"제목을 적어주세요.",
+      "fd_main_er":"내용을 남겨주세요."},
+     {"fd_request":"サイト機能提案，バグ申告などをお願いします。",
+      "fd_email":"メールアドレス",
+      "fd_title":"タイトル",
+      "fd_main":"フィードバックしたい内容を書いてください。",
+      "fd_submit":"送信",
+      "fd_cancel":"キャンセル",
+      "fd_email_er":"正しいメールアドレスを入力してください。",
+      "fd_title_er":"タイトルを入力してください。",
+      "fd_main_er":"フィードバック内容を入力してください。"}
+ ],
+ "fd_thank" : ["감사합니다!",
+               "ありがとうございます！"]
+ }

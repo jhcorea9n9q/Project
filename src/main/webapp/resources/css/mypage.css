@@ -1,0 +1,135 @@
+section {
+    height: calc(100vh - 180px);
+    min-height: 700px;
+}
+section > div {
+    margin-top: 30px;
+}
+section #my_menu {
+    width: 249px;
+    height: 500px;
+    border-right: 1px solid lightgrey;
+}
+section #my_menu ul {
+    padding: 0;
+    width: calc(100% - 30px);
+    margin: 0 15px;
+}
+section #my_menu ul p {
+    color: #6d6d6d;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+section #my_menu ul li {
+    color: #005818;
+    font-size: 17px;
+    padding: 10px 15px;
+}
+section #my_menu ul li:hover {
+    background-color: #e8e8e8;
+    cursor: pointer;
+}
+section #my_menu #menu_admin {
+    /*display: none;*/
+}
+section #menu_body {
+    width: 950px;
+    height: 670px;
+}
+section #menu_body > div {
+    width: calc(100% - 30px);
+    height: 100%;
+    display: none;
+    margin-left: 30px;
+}
+section #menu_body > div h2 {
+    margin-bottom: 50px;
+}
+section #menu_body > div p {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+section #menu_body > div input {
+    width: 400px;
+    height: 30px;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+section #menu_body > div button {
+    cursor: pointer;
+}
+section #menu_body > div .updatebtn {
+    width: 80px;
+    height: 36px;
+    font-size: 20px;
+    border: 1px solid lightgrey;
+    background-color: white;
+}
+section #menu_body > div .updatebtn:hover {
+    background-color: lightgrey;
+}
+section #menu_body > div .togglebtn {
+    width: 80px;
+    height: 36px;
+    font-size: 15px;
+    border: 1px solid lightgrey;
+    background-color: white;
+}
+section #menu_body > div .togglebtn:hover {
+    background-color: #e2e2e2;
+}
+section #menu_body > div .togglebtn:active {
+    background-color: lightgrey;
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+}
+section #menu_body > div #yesbtn {
+    border-right: 0;
+}
+section #menu_body > div #delbtn {
+    height: 40px;
+    background-color: #ea6c00;
+    border: 0;
+    border-radius: 2px;
+    color: white;
+    font-size: 15px;
+    padding: 1px 15px;
+}
+section #menu_body > div #delbtn:hover {
+    background-color: #d05f00;
+}
+section #menu_body > div > div {
+    width: 100%;
+    height: calc(100% - 82px);
+}
+table {
+    text-align: center;
+}
+.admin_list {
+    width: calc(100% - 2px);
+    height: 500px;
+    border-collapse: collapse;
+    border: 1px solid lightgrey;
+    background-color: white;
+}
+.admin_list th, .admin_list td {
+    padding: 15px;
+}
+.pagech {
+    width: 50%;
+    border-collapse: collapse;
+    display: inline-block;
+}
+.pagech td {
+    width: 44px;
+}
+section #menu_body > div > div > span, .pagech {
+    margin-top: 30px;
+}
+.p_l {
+    margin-left: 198px;
+    margin-right: 16px;
+}
+.p_r {
+    margin-left: 16px;
+}

@@ -1,0 +1,61 @@
+/*공용설정*/
+html, body {margin: 0}
+h1, h2, h3, p {margin: 0}
+section {background-color: #f1f1f1;}
+ul {list-style: none; margin: 0;}
+
+/*공용클래스*/
+.f_l{float: left}
+.f_r{float: right}
+.bc_b{background-color: black}
+.bc_w{background-color: white}
+.bc_g{background-color: lightgray}
+.dp_i{display: inline-block}
+.give_pad{width: 1200px; padding: 0 calc(50% - 600px);}
+
+/*공용헤더*/
+#mainhead{
+    height: 100px;
+    text-align: center;
+}
+#mainhead #headlogo {
+    width: 420px;
+    height: 80px;
+    margin: 10px 0;
+    background-image: url(../img/logo.png);
+    background-size: cover;
+}
+#mainli {
+    height: 80px;
+    text-align: center;
+    background-color: #0e6f21;
+}
+#mainli li {
+    display: inline-block;
+    width: 130px;
+    height: 24px;
+    padding: 28px 0;
+}
+#mainli li a {
+    text-decoration: none;
+    color: white;
+    padding: 20px 5px;
+}
+#mainli #cg_lan{
+    width: 60px;
+    height: 24px;
+    border-radius: 25px;
+    margin: 28px 15px 0 15px;
+    color: #0a4100;
+    border: 1px solid #0a4100;
+    font-size: 13px;
+}
+#mainli #cg_lan p{
+    margin: 0;
+    margin-top: 3px;
+    color: #0a4100;
+    font-size: 13px;
+}
+#mainli li a:hover, #cg_lan:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/mypage.css">
+<link rel='shortcut icon' href="img/icon.png">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/mypage.js"></script>
+<script>
+$(document).ready(function(){
+    myjs();
+});
+</script>
+</head>
+<body>
+<header id="mainhead" class="bc_w dp_i f_l give_pad">
+    <a id="headlogo" class="dp_i" href="main.html"></a>
+</header>
+<ul id="mainli" class="dp_i f_l give_pad">
+    <li id="page1" class="f_l"><a href="stats.html"></a></li>
+    <li id="page2" class="f_l"><a href="review.html"></a></li>
+    <li id="page3" class="f_r"><a href="signup.html"></a></li>
+    <li id="page4" class="f_r"><a href="login.html"></a></li>
+    <li id="page5" class="f_r"><a href="mypage.html"></a></li>
+    <span id="cg_lan" class="bc_w f_r"><p></p></span>
+</ul>
+<section class="dp_i f_l give_pad">
+    <div id="my_menu" class="dp_i f_l">
+        <ul id="menu_users">
+            <p></p>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul id="menu_admin">
+            <p>사이트 관리</p>
+            <li>회원관리</li>
+            <li>피드백 확인</li>
+        </ul>
+    </div>
+    <div id="menu_body" class="dp_i f_l">
+        <div id="menu1">
+            <h2></h2>
+            <p><span>goodee@co.kr</span></p><br>
+            <p><span>구디맨</span></p><br>
+            <p><span>2018-08-25</span></p>
+        </div>
+        <div id="menu2">
+            <h2></h2>
+            <p><span>18</span></p><br>
+            <p><span>151</span></p>
+        </div>
+        <div id="menu3">
+            <h2></h2>
+            <p></p>
+            <input type="email" name="email" maxlength="40" value="goodee@co.kr" required><br>
+            <p></p>
+            <input type="text" name="nick" maxlength="15" value="구디맨" required><br>
+            <button class="updatebtn" type="button"></button>
+        </div>
+        <div id="menu4">
+            <h2></h2>
+            <p></p>
+            <input type="password" name="pwd" maxlength="15" required><br>
+            <p></p>
+            <input type="password" name="pwd_check" maxlength="15" required><br>
+            <button class="updatebtn" type="button"></button>
+        </div>
+        <div id="menu5">
+            <h2></h2>
+            <p></p><br>
+            <button id="yesbtn" class="togglebtn dp_i f_l" type="button"></button>
+            <button id="nobtn" class="togglebtn dp_i f_l" type="button"></button>
+        </div>
+        <div id="menu6">
+            <h2></h2>
+            <p></p><br>
+            <button id="delbtn" type="button">동의하고 계정을 삭제합니다.</button>
+        </div>
+        <div id="menu7">
+            <h2></h2>
+            <div>
+                <table class="admin_list dp_i f_l">
+                    <tr>
+                        <th>회원번호</th>
+                        <th>메일 주소</th>
+                        <th>닉네임</th>
+                        <th>리뷰 수</th>
+                        <th>가입일</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>zhini0902@naver.com</td>
+                        <td>구디맨</td>
+                        <td>151</td>
+                        <td>2018-08-25</td>
+                        <td>
+                            <button type="button">탈퇴</button>
+                        </td>
+                    </tr>
+                </table>
+                <span class="dp_i f_l p_l">◁</span>
+                <table class="pagech dp_i f_l">
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                </table>
+                <span class="dp_i f_l p_r">▷</span>
+            </div>
+        </div>
+        <div id="menu8">
+            <h2></h2>
+            <div>
+                <table class="admin_list dp_i f_l">
+                    <tr>
+                        <th>번호</th>
+                        <th>메일 주소</th>
+                        <th>타이틀</th>
+                        <th>내용</th>
+                        <th>발송일</th>
+                        <th>체크</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>zhini0902@naver.com</td>
+                        <td>안녕하세요.</td>
+                        <td>좀 더 노력하십시오.</td>
+                        <td>2018-08-25</td>
+                        <td>
+                            <button type="button">확인</button>
+                        </td>
+                    </tr>
+                </table>
+                <span class="dp_i f_l p_l">◁</span>
+                <table class="pagech dp_i f_l">
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                </table>
+                <span class="dp_i f_l p_r">▷</span>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

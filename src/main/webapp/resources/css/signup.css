@@ -1,0 +1,98 @@
+/*공용 버튼 CSS*/
+.signbtns {
+    width: 180px;
+    height: 50px;
+    margin: 0 10px;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+.signbtns:hover {
+    cursor: pointer;
+}
+.sign_ok {
+    background-color: #00be33;
+}
+.sign_ok:hover {
+    background-color: #006d1d;
+}
+.sign_no {
+    background-color: #be0000;
+}
+.sign_no:hover {
+    background-color: #6d0000;
+}
+
+/*사용약관 동의 창*/
+#welcome_goodee {
+    border-bottom: 1px solid lightgrey;
+}
+#welcome_goodee #wel_head {
+    width: 100%;
+    height: 50px;
+    margin-top: 30px;
+    border-bottom: 1px solid lightgrey;
+}
+#welcome_goodee #wel_head span {
+    height: 22px;
+    width: 22px;
+    margin: 6px 15px 12px 15px;
+    background-image: url(../img/icon.png);
+    background-size: cover;
+}
+#welcome_goodee #wel_head h2 {
+    margin-bottom: 8px;
+}
+#welcome_goodee #wel_main {
+    width: 100%;
+}
+#welcome_goodee #wel_main > div {
+    width: calc(100% - 30px);
+    background-color: white;
+    border: 5px ridge lightgrey;
+    padding: 10px;
+    border-radius: 15px;
+}
+#welcome_goodee #wel_main #terms1 {
+    height: 260px;
+}
+#welcome_goodee #wel_main #terms2 {
+    height: 560px;
+}
+#welcome_goodee #wel_main input {
+    margin: 30px 0 60px 0;
+}
+#welcome_goodee #wel_btn {
+    width: 400px;
+    margin: 0 400px 50px 400px;
+    height: 50px;
+}
+
+/*가입 정보 입력창*/
+#sign_mainsec {
+    display: none;
+}
+#sign_mainsec #sign_input {
+    width: calc(100% - 30px);
+    height: 700px;
+    margin: 40px 15px;
+}
+#sign_mainsec #sign_input p {
+    margin-left: 20%;
+    margin-top: 10px;
+}
+#sign_mainsec #sign_input .not_check {
+    width: calc(60% - 4px);
+    height: 40px;
+    margin: 20px 20%;
+    font-size: 25px;
+}
+#sign_mainsec #sign_input #email_agree {
+    margin: 20px 10px 20px 20%;
+}
+#sign_mainsec #sign_input > div {
+    width: 400px;
+    margin: 50px calc(50% - 200px);
+    height: 50px;
+}

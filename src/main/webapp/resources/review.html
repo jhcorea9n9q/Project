@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/review.css">
+<link rel='shortcut icon' href="img/icon.png">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/review.js"></script>
+<script>
+$(document).ready(function(){
+    revjs();
+});
+</script>
+</head>
+<body>
+<header id="mainhead" class="bc_w dp_i f_l give_pad">
+    <a id="headlogo" class="dp_i" href="main.html"></a>
+</header>
+<ul id="mainli" class="dp_i f_l give_pad">
+    <li id="page1" class="f_l"><a href="stats.html"></a></li>
+    <li id="page2" class="f_l"><a href="review.html"></a></li>
+    <li id="page3" class="f_r"><a href="signup.html"></a></li>
+    <li id="page4" class="f_r"><a href="login.html"></a></li>
+    <li id="page5" class="f_r"><a href="mypage.html"></a></li>
+    <span id="cg_lan" class="bc_w f_r"><p></p></span>
+</ul>
+<!--/글쓰기/
+        [제목]
+        [영화명]
+        [평점:?]
+        [내용]-->
+<section>
+    <h2>리뷰 게시판</h2>
+    <hr>
+    <div id="rev" class="dp_i f_l give_pad">
+        <div id="revHeader">
+            <h2>토이 스토리</h2>
+            <span>★★★★☆4</span>
+            <h3>인상깊었던 영화를 다시 보면서 느낀점입니다.</h3>
+        </div>
+        <hr>
+        <div id="revInfo">
+            <p>작성자 : <span>구디맨</span></p>
+            <p>조회수 : <span>515</span></p>
+            <p>추천수 : <span>34</span></p>
+            <p>작성일 : <span>2018-08-25</span></p>
+        </div>
+        <hr>
+        <div id="revMain">
+            아주 좋은 영화입니다.
+        </div>
+        <div id="revFooter">
+            <button type="button">추천</button>
+            <button type="button">비추천</button>
+        </div>
+        <hr>
+        <div id="revInsertComm">
+            <textarea placeholder="덧글을 입력해 주십시오."></textarea>
+            <button type="button">입력</button>
+            <button type="button">입력 후 추천</button>
+        </div>
+        <div id="revCommentList">
+            <table>
+                <tr>
+                    <td>구디친구</td>
+                    <td>많이 공감합니다!</td>
+                    <td>2018-08-25</td>
+                    <td><button type="button">답글달기</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <hr>
+    <div id="revList" class="dp_i f_l give_pad">
+        <table>
+            <tr>
+                <th>번호</th>
+                <th>영화명</th>
+                <th>제목</th>
+                <th>닉네임</th>
+                <th>등록일</th>
+                <th>조회수</th>
+                <th>추천!</th>
+            </tr>
+            <tr>
+                <td>공지</td>
+                <td></td>
+                <td>구디 무비 공지</td>
+                <td>운영자</td>
+                <td>2018-08-15</td>
+                <td>102053</td>
+                <td>155</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>토이 스토리</td>
+                <td>인상깊었던 영화를 다시...</td>
+                <td>구디맨</td>
+                <td>2018-05-05</td>
+                <td>515</td>
+                <td>34</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>토이 스토리</td>
+                <td>인상깊었던 영화를 다시...</td>
+                <td>구디맨</td>
+                <td>2018-05-05</td>
+                <td>515</td>
+                <td>34</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>토이 스토리</td>
+                <td>인상깊었던 영화를 다시...</td>
+                <td>구디맨</td>
+                <td>2018-05-05</td>
+                <td>515</td>
+                <td>34</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>토이 스토리</td>
+                <td>인상깊었던 영화를 다시...</td>
+                <td>구디맨</td>
+                <td>2018-05-05</td>
+                <td>515</td>
+                <td>34</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>토이 스토리</td>
+                <td>인상깊었던 영화를 다시...</td>
+                <td>구디맨</td>
+                <td>2018-05-05</td>
+                <td>515</td>
+                <td>34</td>
+            </tr>
+        </table>
+    </div>
+    <hr>
+    <div id="pageList" class="dp_i f_l give_pad">
+        <span>◀</span>
+        <table>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+            </tr>
+        </table>
+        <span>▶</span>
+    </div>
+    <hr>
+    <div id="searchDiv" class="dp_i f_l give_pad">
+        <select>
+            <option>제목</option>
+            <option>내용</option>
+            <option>닉네임</option>
+            <option>영화명</option>
+        </select>
+        <input type="text" name="search" maxlength="25">
+        <button type="button">검색!</button>
+    </div>
+    <hr>
+    <div id="insertBtn" class="dp_i f_l give_pad">
+        <button type="button">글쓰기</button>
+    </div>
+    <hr>
+</section>
+</body>
+</html>
