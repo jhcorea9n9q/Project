@@ -3,6 +3,7 @@ var myjs = function() {
     pageNo = 5;
     lan_li(pageNo);
     my_lan();
+    logintoggle(pageNo);
     my_event();
     lan_bnt();
 }
@@ -39,7 +40,6 @@ var my_lan = function() {
 
 // mypage 화면 이벤트
 var my_event = function() {
-    li_event( $("#menu_users > li").eq(0) , 1);
     $("#menu_users li").off().on("click", function(){
         li_event(this, $(this).index() );
     });
@@ -57,4 +57,43 @@ var li_event = function(t, i) {
     $("#my_menu ul li").css("color", "#005818");
     $(t).css("background-color", "#005818");
     $(t).css("color", "white");
+}
+
+// 로그인된 유저에 따른 변경
+var myPageCss = function(userData){
+    var userNo = userData.userNo;
+    if(userNo==1){
+        $("#menu_users").hide();
+        $("#menu_admin").show();
+        li_event( $("#menu_admin > li").eq(0) , 7);
+        $("#menu7 h2").text( $("#menu_admin > li").eq(0).text() );
+    }else{
+        li_event( $("#menu_users > li").eq(0) , 1);
+        $("#menu1 p").eq(0).children("span").text(userData.userEmail);
+        $("#menu1 p").eq(1).children("span").text(userData.nickName);
+        var dateData = userData.signDate.split(" ");
+        $("#menu1 p").eq(2).children("span").text(dateData[0]+"-"+dateData[1]+"-"+dateData[2]);
+        $("#menu2 p").eq(0).children("span").text(userData.revCount);
+        $("#menu2 p").eq(1).children("span").text(userData.commCount);
+        $("#menu3 input").eq(0).attr("value", userData.userEmail);
+        $("#menu3 input").eq(1).attr("value", userData.nickName);
+        if(userData.getMail=="Y"){
+            btnCssToggle("#yesbtn", "#nobtn");
+        }else if(userData.getMail=="N"){
+            btnCssToggle("#nobtn", "#yesbtn");
+        }
+    }
+}
+
+// 이메일 발송 버튼 토글
+var btnCssToggle = function(push, pull){
+    $(push).css("background-color", "lightgrey");
+    $(pull).css("background-color", "white");
+    $(pull).hover(function(){
+        $(this).css("background-color", "#e2e2e2")
+    }, function(){
+        $(this).css("background-color", "white")
+    });
+    $(push).css("box-shadow", "inset 0 3px 5px rgba(0,0,0,.125)");
+    $(pull).css("box-shadow", "0");
 }

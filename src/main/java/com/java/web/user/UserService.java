@@ -1,5 +1,6 @@
 package com.java.web.user;
 
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,6 +25,7 @@ public class UserService implements UserServiceInterface {
 	@Override
 	public HashMap<String, Object> sign_up(HttpServletRequest req) {
 		logger.info("@ SERVICE LOG : VALUE = sign_up");
+		logger.info("***************************************************");
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		logger.info(" 1) 이메일 & 닉네임 중복 체크.");
 		HashMap<String, Object> param = HttpUtil.getParamMap(req);
@@ -77,20 +79,70 @@ public class UserService implements UserServiceInterface {
 
 	@Override
 	public HashMap<String, Object> tryLogin(HttpServletRequest req, HttpSession sess) {
-		
-		return null;
+		logger.info("@ SERVICE LOG : VALUE = tryLogin");
+		logger.info("***************************************************");
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		logger.info(" 1) 로그인 시도.");
+		HashMap<String, Object> param = HttpUtil.getParamMap(req);
+		logger.info(" 2) 로그인 파라미터 : " + param);
+		param.put("sqlType", "user.tryLogin");
+		param.put("sql", "selectOne");
+		HashMap<String, Object> tryLogin = (HashMap<String, Object>) DI.callDB(param);
+		logger.info(" 3) 로그인 시도 결과 : " + tryLogin);
+		if(tryLogin == null) {
+			logger.info(" 4) 로그인 시도 실패. 종료");
+			resultMap.put("status", 0);
+		}else{
+			logger.info(" 4) 로그인 SQL문 결과 있음.");
+			int userNo = (int) tryLogin.get("userNo");
+			int failStack = (int) tryLogin.get("failStack");
+			tryLogin.put("signDate", new SimpleDateFormat("yyyy MM dd HH mm ss").format(tryLogin.get("signDate")) );
+			param.put("userNo", userNo);
+			if( !param.get("pwd").equals(tryLogin.get("password"))  ) {
+				logger.info(" 5) 입력된 비밀번호와 id의 비밀번호 불일치.");
+				if(userNo != 1) {
+					param.put("sqlType", "user.failStack");
+					param.put("sql", "update");
+					int stackUpdate = (int) DI.callDB(param);
+					logger.info(" 6) 비밀번호 실패횟수 업데이트 결과 : " + stackUpdate);
+					if(stackUpdate == 1) {
+						resultMap.put("failStack", failStack + 1);
+					}
+				}else {
+					resultMap.put("failStack", "none");
+				}
+				resultMap.put("status", 3);
+			}else if(param.get("pwd").equals(tryLogin.get("password"))) {
+				logger.info(" 5) 입력된 비밀번호와 id의 비밀번호 일치.");
+				sess.setAttribute("user", tryLogin);
+				if(userNo == 1) {
+					logger.info(" 6) 관리자 로그인.");
+					resultMap.put("status", 2);
+				}else{
+					String nick = tryLogin.get("nickName").toString();
+					logger.info(" 6) 회원명 " + nick + " 님 로그인.");
+					param.put("sqlType", "user.resetStack");
+					param.put("sql", "update");
+					int stackUpdate = (int) DI.callDB(param);
+					logger.info(" 7) 비밀번호 실패횟수 업데이트 결과 : " + stackUpdate);
+					if(stackUpdate == 1) {
+						resultMap.put("failStack", failStack);
+					}
+					resultMap.put("nick", nick);
+					resultMap.put("status", 1);
+				}
+			}
+		}
+		logger.info("***************************************************");
+		return resultMap;
 	}
 
 	@Override
 	public HashMap<String, Object> sessionCheck(HttpSession sess) {
-		
-		return null;
-	}
-
-	@Override
-	public String getUserNo(HttpSession sess) {
-		
-		return null;
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		Object userSession = sess.getAttribute("user");
+		resultMap.put("userSession", userSession);
+		return resultMap;
 	}
 
 	@Override

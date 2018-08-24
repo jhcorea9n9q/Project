@@ -3,6 +3,7 @@ var signjs = function() {
     pageNo = 3;
     lan_li(pageNo);
     sign_lan();
+    logintoggle(pageNo);
     sign_event();
     lan_bnt();
 }
@@ -123,6 +124,7 @@ var trySignUp = function() {
                 document.getElementById('pwd_check').focus();
             }else if(d.status==1){      // 회원가입 설공
                 alert(nick + succeed);
+                location.href = "main.html";
             }
         }).fail(function(){
         	alert(fail_to_sign);

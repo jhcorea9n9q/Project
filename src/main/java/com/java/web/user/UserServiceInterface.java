@@ -13,8 +13,6 @@ public interface UserServiceInterface {
 	
 	public HashMap<String, Object> sessionCheck(HttpSession sess);
 	
-	public String getUserNo(HttpSession sess);
-	
 	public HashMap<String, Object> chID(HttpServletRequest req, HttpSession session);
 	
 	public HashMap<String, Object> chPWD(HttpServletRequest req, HttpSession session);

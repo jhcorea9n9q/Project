@@ -15,16 +15,16 @@ public class HttpUtil {
 	public static HashMap<String, Object> getParamMap(HttpServletRequest req){
     	HashMap<String, Object> result = new HashMap<String, Object>();
     	
-    	Enumeration<?> enums = req.getParameterNames();
-    	while(enums.hasMoreElements()) {
-    		String paramName = enums.nextElement().toString();
+    	Enumeration<?> e = req.getParameterNames();
+    	while(e.hasMoreElements()) {
+    		String paramNm = e.nextElement().toString();
     		
-    		if("".equals(req.getParameter(paramName))) {
+    		if("".equals(req.getParameter(paramNm))) {
     			result = null;
     			break;
     		}
     		    		
-    		result.put(paramName, req.getParameter(paramName));
+    		result.put(paramNm, req.getParameter(paramNm));
     	}
     	
     	return result;

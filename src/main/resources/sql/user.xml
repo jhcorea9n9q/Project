@@ -23,10 +23,23 @@
 	<select id="tryLogin" parameterType="HashMap" resultType="HashMap">
 		select * from userlist
 		where (`userEmail` = #{id} or `nickName` = #{id})
-		and `password` = #{pwd}
 		and `userDelYn` = 'N'
 		limit 1
 	</select>
+	
+	<!-- 비밀번호 틀릴 시 Stack -->
+	<update id="failStack" parameterType="HashMap">
+		update userlist
+		set `failStack` = `failStack` + 1
+		where `userNo` = #{userNo} and `userDelYn` = 'N'
+	</update>
+	
+	<!-- 비밀번호 성공 시 Stack -->
+	<update id="resetStack" parameterType="HashMap">
+		update userlist
+		set `failStack` = 0
+		where `userNo` = #{userNo} and `userDelYn` = 'N'
+	</update>
 	
 	<!-- 계정정보 변경 -->
 	<update id="chID" parameterType="HashMap">

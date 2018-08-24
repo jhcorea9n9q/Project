@@ -20,38 +20,58 @@ var lan_li = function(pageNo){
         for(var i=0; i<d.HeadData[lang].length; i++) {
             $("#page" + (i+1)).children("a").text(d.HeadData[lang][i]);
         }
+        var alerts = d.alerts[lang];
+        a_logout = alerts.a_logout;
+        a_notAllow = alerts.a_notAllow;
     });
 }
+
+var a_logout = "";
+var a_notAllow = "";
 
 // 언어변경 이벤트주기
 var lan_bnt = function(){
     $("#cg_lan").off().on("click", function(){
         (lang==0)?lang=1:lang=0;
         sessionStorage.setItem("gd_lang", lang);
-        lan_li(pageNo);
         if(pageNo==0){
-            main_lan();  // 메인화면 언어변경 펑션(main.js참조)
+            location.href='main.html';
         }else if(pageNo==3){
-            sign_lan();  // 회원가입 화면 언어변경 펑션
+            location.href='signup.html';
         }else if(pageNo==4){
-            login_lan(); // 로그인 화면 언어변경 펑션
+            location.href='login.html';
         }else if(pageNo==5){
-            my_lan();    // 마이페이지 화면 언어변경 펑션
+            location.href='mypage.html';
         }
     });
 }
 
-var islogin = false;
-
-// 로그인 세션 체크 & 세션에 따른 메뉴리스트 변화
-var logintoggle = function(){
-    if(islogin){
-        $("#page3").hide();
-        $("#page4").hide();
-        $("#page5").show();
-    }else{
-        $("#page3").show();
-        $("#page4").show();
-        $("#page5").hide();
-    }
+// 로그인 세션 체크 & 세션에 따른 메뉴리스트 변화(공용)
+var logintoggle = function(pageNo){
+    $("#page6").off().on("click",function(){
+        alert(a_logout);
+    });
+    $.ajax({
+        type:"post",
+        url:"/gdmovie/sessionCheck"
+    }).done(function(data){
+        var d = JSON.parse(data);
+        if(d.userSession==null){
+            $(".outPage").show();
+            $(".inPage").hide();
+            if(pageNo==5){
+                alert(a_notAllow);
+                location.href = "main.html";
+            }
+        }else if(d.userSession!=null){
+            $(".outPage").hide();
+            $(".inPage").show();
+            if(pageNo==3||pageNo==4){
+                alert(a_notAllow);
+                location.href = "main.html";
+            }else if(pageNo==5){
+                myPageCss(d.userSession);
+            }
+        }
+    });
 }

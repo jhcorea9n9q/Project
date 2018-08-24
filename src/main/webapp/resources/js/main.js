@@ -2,6 +2,7 @@
 var indexjs = function(){
     lan_li(pageNo);
     main_lan();
+    logintoggle(pageNo);
     main_event();
     lan_bnt();
 }
