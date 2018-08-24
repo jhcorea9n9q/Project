@@ -7,8 +7,6 @@ import javax.servlet.http.HttpSession;
 
 public interface UserServiceInterface {
 	
-	public HashMap<String, Object> idCheck(HttpServletRequest req);
-
 	public HashMap<String, Object> sign_up(HttpServletRequest req);
 	
 	public HashMap<String, Object> tryLogin(HttpServletRequest req, HttpSession sess);

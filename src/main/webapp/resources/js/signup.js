@@ -37,6 +37,7 @@ var sign_lan = function() {
         not_4 = sign_alert.not_4;
         not_matching = sign_alert.not_matching;
         fail_to_sign = sign_alert.fail_to_sign;
+        succeed = sign_alert.success;
     });
 }
 
@@ -47,6 +48,7 @@ var already_email = "";
 var already_nick = "";
 var not_4 = "";
 var not_matching = "";
+var succeed = "";
 
 // signup 화면 이벤트
 var sign_event = function() {
@@ -58,11 +60,11 @@ var sign_event = function() {
 // 약관동의 이벤트
 var agreeToService = function(btn) {
 	$(btn).off().on("click", function(){
-        if ( !$("#agree1").is(":checked") ) {
+        if ( !$("#agree1").is(":checked") ) {       // 1번 체크 안됨
             alert(alert_message);
             $("html, body").animate({scrollTop:$("#terms1").offset().top}, 0);
         }else{
-            if( !$("#agree2").is(":checked") ) {
+            if( !$("#agree2").is(":checked") ) {    // 2번 체크 안됨
                 alert(alert_message);
             } else{
                 $("#sign_mainsec").show();
@@ -92,78 +94,39 @@ var trySignUp = function() {
         var pwd = $("#sign_input input").eq(2).val();
         var pwd_check = $("#sign_input input").eq(3).val();
         var email_agree = $("#sign_input #email_agree").is(":checked");
-        var ag;
+        var getMail;
         if(email_agree){
-        	ag = "Y";
+            getMail="Y";
         }else{
-        	ag = "N";
+            getMail="N";
         }
-        
-        var checkResult = false;
-        
         $.ajax({
-        	type:"post",
-        	url:"/gdmovie/idCheck",
-        	data:{"email":email,"nick":nick}
+            type:"post",
+            url:"/gdmovie/sign_up",
+            data:{"email":email,"nick":nick,"pwd":pwd,"pwd2":pwd_check,"getMail":getMail}
         }).done(function(data){
-        	var d = JSON.parse(data);
-        	if(d.status==0){
-        		alert(fail_to_sign);
-        		document.getElementById('email').focus();
-        	}else if(d.status==1){
-        		alert(already_email);
-        		document.getElementById('email').focus();
-        	}else if(d.status==2){
-        		alert(already_nick);
-        		document.getElementById('nick').focus();
-        	}else if(d.status==3){
-        		if(pwd.length < 4) {
-                    alert(not_4);
-                    document.getElementById('pwd').focus();
-                }else{
-                	if(pwd!=pwd_check){
-                        alert(not_matching);
-                        document.getElementById('pwd_check').focus();
-                    }else if(pwd==pwd_check){
-                    	console.log("SUCCESS");
-                    	checkResult = true;
-                    }
-                }
-        	}
+            var d = JSON.parse(data);
+            if(d.status==0){            // 회원가입 실패
+                alert(fail_to_sign);
+                document.getElementById('email').focus();
+            }else if(d.status==2){      // 이메일 중복
+                alert(already_email);
+                document.getElementById('email').focus();
+            }else if(d.status==3){      // 닉네임 중복
+                alert(already_nick);
+                document.getElementById('nick').focus();
+            }else if(d.status==4){      // 비밀번호 4자리 미만
+                alert(not_4);
+                document.getElementById('pwd').focus();
+            }else if(d.status==5){      // 재확인 비밀번호 불일치
+                alert(not_matching);
+                document.getElementById('pwd_check').focus();
+            }else if(d.status==1){      // 회원가입 설공
+                alert(nick + succeed);
+            }
         }).fail(function(){
         	alert(fail_to_sign);
-        });
-        setTimeout(function() {
-        	  console.log(checkResult)}, 100);
-//        if(prob == true){
-//        	$.ajax({
-//            	type:"post",
-//            	url:"/gdmovie/sign_up",
-//            	data:{
-//            		"email":email,
-//            		"nick":nick,
-//            		"pwd":pwd,
-//            		"getMail":ag
-//            	}
-//            }).done(function(data){
-//            	var d = JSON.parse(data);
-//            	if(d.status==0){
-//            		alert(fail_to_sign);
-//            		document.getElementById('email').focus();
-//            	}else if(d.status==1){
-//            		console.log("SUCCESS!");
-//            	}
-//            });
-//        }
-        
-        // 백단을 하나로 합치고 프론트단에선 우선 비밀번호 체크 -> 이후에 내용을 받아 alert를 띄워주자.
+            document.getElementById('email').focus();
+        }); 
     });
 }
-
-
-
-// 회원가입 문제사항 체크
-//var problemCheck = function(email, nick, pwd, pwd2) {
-//	
-//	return checkResult;
-//}

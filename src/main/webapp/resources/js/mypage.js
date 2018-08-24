@@ -22,7 +22,7 @@ var my_lan = function() {
         for(var m=1; m<7; m++){
             var mn = "menu" + m;
             $.each(menu_text[mn], function(ind, val) {
-                $("#" + mn + " p").eq(ind).text(val);
+                $("#" + mn + " p").eq(ind).html(val);
             });
             if(m==3||m==4){
                 $("#" + mn + " button").text(menu_text.menu34btn);
