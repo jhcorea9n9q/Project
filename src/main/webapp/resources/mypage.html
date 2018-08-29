@@ -25,7 +25,7 @@ $(document).ready(function(){
     <li id="page2" class="f_l"><a href="review.html"></a></li>
     <li id="page3" class="f_r outPage"><a href="signup.html"></a></li>
     <li id="page4" class="f_r outPage"><a href="login.html"></a></li>
-    <li id="page6" class="f_r inPage"><a href="/gdmovie/logout"></a></li>
+    <li id="page6" class="f_r inPage"><a href="/logout"></a></li>
     <li id="page5" class="f_r inPage"><a href="mypage.html"></a></li>
     <span id="cg_lan" class="bc_w f_r"><p></p></span>
 </ul>
@@ -64,15 +64,15 @@ $(document).ready(function(){
             <input type="email" name="email" maxlength="40" value="" required><br>
             <p></p>
             <input type="text" name="nick" maxlength="15" value="" required><br>
-            <button class="updatebtn" type="button"></button>
+            <button class="updatebtn" type="submit"></button>  
         </div>
         <div id="menu4">
-            <h2></h2>
+            <h2></h2>            
             <p></p>
-            <input type="password" name="pwd" maxlength="15" required><br>
+            <input type="password" id="newpwd" name="pwd" maxlength="15" required><br>
             <p></p>
-            <input type="password" name="pwd_check" maxlength="15" required><br>
-            <button class="updatebtn" type="button"></button>
+            <input type="password" id="newpwdCheck" name="pwd_check" maxlength="15" required><br>
+            <button class="updatebtn" type="submit"></button> 
         </div>
         <div id="menu5">
             <h2></h2>
@@ -88,79 +88,20 @@ $(document).ready(function(){
         <div id="menu7">
             <h2></h2>
             <div>
-                <table class="admin_list dp_i f_l">
-                    <tr>
-                        <th>회원번호</th>
-                        <th>메일 주소</th>
-                        <th>닉네임</th>
-                        <th>리뷰 수</th>
-                        <th>가입일</th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>zhini0902@naver.com</td>
-                        <td>구디맨</td>
-                        <td>151</td>
-                        <td>2018-08-25</td>
-                        <td>
-                            <button type="button">탈퇴</button>
-                        </td>
-                    </tr>
-                </table>
-                <span class="dp_i f_l p_l">◁</span>
-                <table class="pagech dp_i f_l">
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                    <td>7</td>
-                    <td>8</td>
-                    <td>9</td>
-                    <td>10</td>
-                </table>
-                <span class="dp_i f_l p_r">▷</span>
+                <table class="admin_list dp_i f_l"></table>
+                <div class="pageDiv dp_i f_l">
+                    <table id='menu7page' class='pagech'></table>
+                </div>
             </div>
         </div>
         <div id="menu8">
             <h2></h2>
             <div>
-                <table class="admin_list dp_i f_l">
-                    <tr>
-                        <th>번호</th>
-                        <th>메일 주소</th>
-                        <th>타이틀</th>
-                        <th>내용</th>
-                        <th>발송일</th>
-                        <th>체크</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>zhini0902@naver.com</td>
-                        <td>안녕하세요.</td>
-                        <td>좀 더 노력하십시오.</td>
-                        <td>2018-08-25</td>
-                        <td>
-                            <button type="button">확인</button>
-                        </td>
-                    </tr>
-                </table>
-                <span class="dp_i f_l p_l">◁</span>
-                <table class="pagech dp_i f_l">
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                    <td>7</td>
-                    <td>8</td>
-                    <td>9</td>
-                    <td>10</td>
-                </table>
-                <span class="dp_i f_l p_r">▷</span>
+                <table class="admin_list dp_i f_l"></table>
+                <div id='fdDetail'></div>
+                <div class="pageDiv dp_i f_l">
+                    <table id='menu8page' class='pagech'></table>
+                </div>
             </div>
         </div>
     </div>

@@ -103,7 +103,7 @@ var trySignUp = function() {
         }
         $.ajax({
             type:"post",
-            url:"/gdmovie/sign_up",
+            url:"/sign_up",
             data:{"email":email,"nick":nick,"pwd":pwd,"pwd2":pwd_check,"getMail":getMail}
         }).done(function(data){
             var d = JSON.parse(data);

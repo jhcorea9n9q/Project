@@ -38,10 +38,6 @@ var alert_fail = "";
 
 // login 화면 이벤트
 var login_event = function() {
-    tryLogin();
-}
-
-var tryLogin = function() {
     $("section form").off().submit(function(e){
         e.preventDefault();
         var id = $("section form input").eq(0).val();
@@ -52,7 +48,7 @@ var tryLogin = function() {
         }else{
             $.ajax({
                 type:"post",
-                url:"/gdmovie/tryLogin",
+                url:"/tryLogin",
                 data:{"id":id,"pwd":pwd}
             }).done(function(data){
                 var d = JSON.parse(data);

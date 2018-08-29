@@ -1,3 +1,4 @@
+/*기본 세팅*/
 section {
     height: calc(100vh - 180px);
     min-height: 700px;
@@ -5,6 +6,8 @@ section {
 section > div {
     margin-top: 30px;
 }
+
+/*좌단 세로 선택바 설정*/
 section #my_menu {
     width: 249px;
     height: 300px;
@@ -33,6 +36,8 @@ section #my_menu ul li:hover {
 section #my_menu #menu_admin {
     display: none;
 }
+
+/*우측 mypage 내용*/
 section #menu_body {
     width: 950px;
     height: 670px;
@@ -94,6 +99,8 @@ section #menu_body > div #delbtn {
 section #menu_body > div #delbtn:hover {
     background-color: #d05f00;
 }
+
+/*admin 용 mypage 설정*/
 section #menu_body > div > div {
     width: 100%;
     height: calc(100% - 82px);
@@ -111,21 +118,42 @@ table {
 .admin_list th, .admin_list td {
     padding: 15px;
 }
+section #menu_body > #menu8 > div #fdDetail {
+    position: fixed;
+    padding: 10px;
+    z-index: 1;
+    word-break: break-all;
+    font-size: 13px;
+    color: #333;
+    background-color: white;
+    border: 1px lightgrey solid;
+    border-radius: 5px;
+    display: none;
+}
+section #menu_body > #menu8 .fdTitle {
+    cursor: pointer;
+}
+section #menu_body > div table button {
+    padding: 2px 12px;
+}
+
+/*admin 용 paging 설정*/
+.pageDiv {
+    text-align: center;
+    width: 100%;
+}
 .pagech {
-    width: 50%;
+    margin-top: 30px;
     border-collapse: collapse;
     display: inline-block;
 }
 .pagech td {
     width: 44px;
+    display: inline-block;
+    float: left;
+    color: black;
 }
-section #menu_body > div > div > span, .pagech {
-    margin-top: 30px;
-}
-.p_l {
-    margin-left: 198px;
-    margin-right: 16px;
-}
-.p_r {
-    margin-left: 16px;
+.pagech td:hover {
+    cursor: pointer;
+    color: brown;
 }

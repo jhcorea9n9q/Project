@@ -68,4 +68,17 @@
 			set `userDelYn` = 'Y'
 		where `userNo` = #{userNo} and `userDelYn` = 'N'
 	</update>
+	
+	<!-- 로그인 -->
+	<select id="userList" parameterType="HashMap" resultType="HashMap">
+		select * from userlist
+		where `userDelYn` = 'N' and `userNo` != 1
+		limit #{limit}, 8
+	</select>
+	
+	<!-- 유저 수 체크 -->
+	<select id="userCount" resultType="integer">
+		select count(*) as 'userCount' from userlist
+		where `userDelYn` = 'N' and `userNo` != 1;
+	</select>
 </mapper>

@@ -29,8 +29,11 @@ var main_lan = function() {
         $("#feedback form p").eq(0).text(fbData.fd_email_er);
         $("#feedback form p").eq(1).text(fbData.fd_title_er);
         $("#feedback form p").eq(2).text(fbData.fd_main_er);
+        fd_alert = d.fd_alert[lang];
     });
 }
+
+var fd_alert = "";
 
 // main 화면 이벤트
 var main_event = function() {
@@ -79,9 +82,7 @@ var feedback = function() {
         fd_height += feedbackError(fd_main, 2);
         $("#feedback").css("height", fd_height);     
         if(fd_height == 300) {
-            console.log(fd_email, " | ", fd_title, " | ", fd_main); // 자바로 보낼것
-            feedbackCancel();
-            feedbackOK();
+            feedbackGO(fd_email, fd_title, fd_main);
         }
     });
 }
@@ -114,4 +115,23 @@ var feedbackOK = function() {
             $("#thankyou").animate({bottom: "-140px"}, 600);
         });
     }, 600);
+}
+
+// feedback DB로 보내기
+var feedbackGO = function(email, title, contents){
+    $.ajax({
+        type:"post",
+        url:"/getFB",
+        data : {"email":email,"title":title,"contents":contents}
+    }).done(function(data){
+        var d = JSON.parse(data);
+        if(d.status==0){
+            alert(fd_alert);
+        }else if(d.status==1){
+            feedbackCancel();
+            feedbackOK();
+        }
+    }).fail(function(){
+        alert(fd_alert);
+    });
 }

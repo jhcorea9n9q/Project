@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="feedback">
+	<!-- 피드백 입력 -->
+	<insert id="getFeedback" parameterType="HashMap">
+		insert into `feedback` (`fdEmail`, `fdTitle`, `fdMain`) values (#{email},#{title},#{contents})
+	</insert>
+	
+	<!-- 피드백 리스트 만들기-->
+	<select id="feedbackList" parameterType="HashMap" resultType="HashMap">
+		select * from `feedback` where `fdCheck` = 'N'
+		limit #{limit}, 8
+	</select>
+	
+	<!-- 피드백 체크 처리 -->
+	<update id="feedbackCheck">
+		update `feedback` set `fdCheck` = 'Y'
+		where `fdNo` = #{feedbackNo} and `fdCheck` = 'N'
+	</update>
+	
+	<!-- 피드백 수 체크 -->
+	<select id="feedbackCount" resultType="integer">
+		select count(*) as 'feedbackCount' from `feedback`
+		where `fdCheck` = 'N'
+	</select>
+</mapper>

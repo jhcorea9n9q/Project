@@ -21,4 +21,10 @@ public interface UserServiceInterface {
 	
 	public HashMap<String, Object> delUser(HttpSession session);
 	
+	public HashMap<String, Object> userList(HttpServletRequest req);
+	
+	public HashMap<String, Object> userCount();
+	
+	public HashMap<String, Object> adminDelUser(HttpServletRequest req);
+	
 }

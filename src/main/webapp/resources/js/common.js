@@ -53,7 +53,7 @@ var logintoggle = function(pageNo){
     });
     $.ajax({
         type:"post",
-        url:"/gdmovie/sessionCheck"
+        url:"/sessionCheck"
     }).done(function(data){
         var d = JSON.parse(data);
         if(d.userSession==null){
