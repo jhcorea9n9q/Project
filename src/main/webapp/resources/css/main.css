@@ -165,7 +165,7 @@ footer #fimg {
     height: calc(350px / 8);
     background-size: cover;
     background-image: url(../img/logo_footer.png);
-    margin: 25px 0;
+    margin: 15px 0 5px 0;
 }
 footer #ftxt {
     margin-left: 10px;

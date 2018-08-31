@@ -42,6 +42,10 @@ var lan_bnt = function(){
             location.href='login.html';
         }else if(pageNo==5){
             location.href='mypage.html';
+        }else if(pageNo==1){
+            location.href="stats.html";
+        }else if(pageNo==2){
+            location.href="review.html";
         }
     });
 }

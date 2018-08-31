@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> 영화통계 </title>
+<title></title>
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/stats.css">
 <link rel='shortcut icon' href="img/icon.png">
+<link href="https://fonts.googleapis.com/css?family=Kosugi+Maru|Sunflower:300" rel="stylesheet">
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="js/html2canvas.min.js"></script>
@@ -31,26 +32,21 @@ $(document).ready(function(){
     <li id="page5" class="f_r inPage"><a href="mypage.html"></a></li>
     <span id="cg_lan" class="bc_w f_r"><p></p></span>
 </ul>
-<section id="flowsec" class="dp_i f_l give_pad"></section>
+<div id="nowLoading">
+    <div id="pop1" class="pops"><p></p></div>
+    <div id="pop2" class="pops"></div>
+    <div id="pop3" class="pops"></div>
+</div>
 <section id="selsec" class="dp_i f_l give_pad">
-    <!--[통계(영화수)]
-    합산 / 비율
-    연도별 / 국가별 / 장르별
-    연월.
-    
-    [TOP]
-    연월별 인기순위
-    장르별 인기순위 + 연월
-    성공한 영화 / 실패한 영화 + 연월-->
-    <div id="selCharTp" class="dp_i f_l give_pad">
-        <button type="button" class="dp_i f_l" class="dp_i f_l">영화 합산 통계</button>
-        <button type="button" class="dp_i f_l" class="dp_i f_l">영화 비율 통계</button>
-        <button type="button" class="dp_i f_l">분류별 TOP 10 LIST</button>
+    <div id="statText" class="dp_i f_l">
+        <h2></h2>
     </div>
-    
+    <button type="button" class="dp_i f_l"></button>
+    <button type="button" class="dp_i f_l"></button>
+    <button type="button" class="dp_i f_l"></button>
 </section>
 <section id="charsec" class="dp_i f_l give_pad">
-    
+    <div id="chart_body"><p></p></div>
 </section>
 </body>
 </html>

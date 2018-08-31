@@ -414,6 +414,7 @@ var adminBtnEvent = function(target, targetData, target_url){
             }else if(d.status==1){
                 alert("요청하신 처리가 완료되었습니다.");
                 $(target).prop("disabled", true);
+                $(target).css("cursor", "not-allowed");
             }
         }).fail(function(){
             alert("ajax에 실패했습니다.");

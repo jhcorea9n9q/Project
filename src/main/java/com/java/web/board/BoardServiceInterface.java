@@ -1,5 +1,9 @@
 package com.java.web.board;
 
-public interface BoardServiceInterface {
+import java.util.HashMap;
 
+import javax.servlet.http.HttpServletRequest;
+
+public interface BoardServiceInterface {
+	
 }

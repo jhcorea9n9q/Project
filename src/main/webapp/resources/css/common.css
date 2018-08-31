@@ -1,5 +1,6 @@
 /*공용설정*/
-html, body {margin: 0}
+html, body {margin: 0; font-family: 'Sunflower', 'Kosugi Maru', sans-serif;}
+button, alert {font-family: 'Sunflower', 'Kosugi Maru', sans-serif;}
 h1, h2, h3, p {margin: 0}
 section {background-color: #f1f1f1;}
 ul {list-style: none; margin: 0;}
