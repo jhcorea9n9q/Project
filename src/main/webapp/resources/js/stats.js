@@ -21,6 +21,7 @@ var sta_lan = function() {
         $("#selsec button").eq(0).text(staText.btn1);
         $("#selsec button").eq(1).text(staText.btn2);
         $("#selsec button").eq(2).text(staText.btn3);
+        $("#chart_body").html(staText.whats);
     });
 }
 
@@ -93,7 +94,8 @@ var ChartMaker = function(op_nm){
 	   			    chartType: 'PieChart',
 	   			 	dataTable: chartData,
 	   			    options: {title: op_nm, pieHole: 0.3},
-	   			    containerId : 'chart_body'
+	   			    containerId : 'chart_body',
+                    backgroundColor : '#f1f1f1'
 	   			  };
 			var wrapper = new google.visualization.ChartWrapper(option);
 			wrapper.draw();

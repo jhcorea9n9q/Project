@@ -163,6 +163,7 @@ section {
 }
 #selsec button:hover {
     cursor: pointer;
+    font-weight: bold;
 }
 
 /* 차트영역 */

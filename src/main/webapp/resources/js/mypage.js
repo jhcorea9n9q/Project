@@ -327,6 +327,7 @@ var paging = function(target_url, target) {
             if ( count_calc > 10 ) {
                 $(target).append("<td>[다음]</td>");
             }
+            $(target + " td").eq(0).css("font-weight", "bold");
         }
         page_click(target, count_calc);
     }).fail(function(){
@@ -361,6 +362,14 @@ var page_click = function(target, count_calc){
                         pageList.eq(r).text("[" + page_Number + "]");
                     }
                 }
+                $(target + " td").css("font-weight", "normal");
+                $(target + " td").eq(1).css("font-weight", "bold");
+                var bolder = Number( $(target + " td").eq(1).text().replace("[", "").replace("]","") );
+                if(target=="#menu7page"){
+                    makeList( bolder , "U" );
+                }else if(target=="#menu8page"){
+                    makeList( bolder , "F" );
+                }
             }else if(page_text=="이전"){  // 이전화면
                 var page_length = pageList.length-1;
                 if(last_text=="다음") {   // 다음 페이지 있을 때
@@ -380,12 +389,29 @@ var page_click = function(target, count_calc){
                     }
                     $(target).append("<td>[다음]</td>");
                 }
+                $(target + " td").css("font-weight", "normal");
+                if( $(target + " td").eq(0).text()!="[이전]"){
+                    var bolder = Number( $(target + " td").eq(9).text().replace("[", "").replace("]","") );
+                    $(target + " td").eq(9).css("font-weight", "bold");
+                }else{
+                    var bolder = Number( $(target + " td").eq(10).text().replace("[", "").replace("]","") );
+                    $(target + " td").eq(10).css("font-weight", "bold");
+                }
+                if(target=="#menu7page"){
+                    makeList( bolder , "U" );
+                }else if(target=="#menu8page"){
+                    makeList( bolder , "F" );
+                }
             }
         }else{
             if(target=="#menu7page"){
                 makeList(page_text, "U");
+                pageList.css("font-weight", "normal");
+                $(this).css("font-weight", "bold");
             }else if(target=="#menu8page"){
                 makeList(page_text, "F");
+                pageList.css("font-weight", "normal");
+                $(this).css("font-weight", "bold");
             }
         }
         page_click(target, count_calc);
