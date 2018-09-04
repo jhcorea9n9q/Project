@@ -168,7 +168,8 @@ section {
 
 /* 차트영역 */
 #charsec {
-    height: 580px;
+    height: calc(100vh - 394px);
+    min-height: 580px;
     padding-top: 23px;
     text-align: center;
 }

@@ -1,0 +1,74 @@
+section > h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+table {
+    text-align: center;
+}
+
+/*테이블*/
+#revList {
+    width: 100%;
+}
+#revList table {
+    width: calc(100% - 2px);
+    height: 700px;
+    border-collapse: collapse;
+    border: 1px solid lightgrey;
+    background-color: white;
+}
+#revList td, #revList th {
+    padding: 15px;
+}
+
+/*페이징*/
+#pageList {
+    width: 100%;
+    text-align: center;
+}
+#pageList table {
+    margin: 15px auto;
+    border-collapse: collapse;
+    display: inline-block;
+}
+#pageList td {
+    width: 45px;
+    display: inline-block;
+    float: left;
+    color: black;
+}
+#pageList td:hover {
+    cursor: pointer;
+    color: brown;
+}
+
+/*글검색*/
+#searchDiv {
+    width: 100%;
+}
+#find {
+    margin: 15px 5px;
+    height: 30px;
+    padding: 0 5px;
+}
+#searchDiv input {
+    margin: 15px 5px;
+    height: 25px;
+}
+#searchDiv button {
+    margin: 9px 5px;
+    padding: 5px 10px;
+    height: 30px;
+}
+
+/*글쓰기*/
+#insertBtn {
+    width: 100%;
+    margin-bottom: 20px;
+}
+#insertBtn button {
+    margin: 9px 15px 20px 5px;
+    padding: 5px 10px;
+    height: 30px;
+}

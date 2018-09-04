@@ -3,5 +3,10 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="board">
-	
+	<select id="boardList" parameterType="HashMap" resultType="HashMap">
+		select rb.*, ul.nickName, rm.movieTitle from reviewboard as rb
+		inner join reviewmovielist as rm on rm.movieNo = rb.movieNo
+		inner join userlist as ul on ul.userNo = rb.userNo
+		and rb.delYn = 'N' limit #{limit}, 10;
+	</select>
 </mapper>

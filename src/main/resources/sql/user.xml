@@ -69,7 +69,7 @@
 		where `userNo` = #{userNo} and `userDelYn` = 'N'
 	</update>
 	
-	<!-- 로그인 -->
+	<!-- 유저리스트 -->
 	<select id="userList" parameterType="HashMap" resultType="HashMap">
 		select * from userlist
 		where `userDelYn` = 'N' and `userNo` != 1

@@ -6,7 +6,7 @@ section > h2 {
     margin-top: 30px;
 }
 section > p > span > a {
-    color: #00be33;
+    color: #177e33;
     font-weight: bold;
     text-decoration: none;
 }
@@ -33,9 +33,9 @@ form button {
     border: none;
     color: white;
     font-size: 20px;
-    background-color: #00be33;
+    background-color: #177e33;
 }
 form button:hover {
     cursor: pointer;
-    background-color: #006d1d;
+    background-color: #004d14;
 }

@@ -9,11 +9,11 @@
     font-size: 20px;
     border: none;
     border-radius: 5px;
-    background-color: #00be33;
+    background-color: #177e33;
 }
 .main_btn:hover{
-    color: #00be33;
-    border: 2px solid #00be33;
+    color: #177e33;
+    border: 2px solid #177e33;
     background-color: #ffffff;
     cursor: pointer;
 }
@@ -158,7 +158,7 @@ section {
 footer {
     width: 100%;
     height: 200px;
-    background-color: #2fc658;
+    background-color: #177e33;
 }
 footer #fimg {
     width: calc(1500px / 8);
@@ -212,11 +212,11 @@ footer #ftxt {
     border: none;
     border-radius: 4px;
     margin-top: 10px;
-    background-color: #00be33;
+    background-color: #177e33;
 }
 #feedback button:hover {
     cursor: pointer;
-    background-color: #006d1d;
+    background-color: #004d14;
 }
 #thankyou {
     text-align: center;
@@ -227,11 +227,11 @@ footer #ftxt {
     font-weight: bolder;
     border-radius: 10px;
     background-color: white;
-    border: 5px solid #00be33;
+    border: 5px solid #177e33;
 }
 #thankyou h3 {
     margin: 20px 0;
-    color: #00be33;
+    color: #177e33;
 }
 #thankyou h3:hover {
     cursor: pointer;

@@ -12,10 +12,10 @@
     cursor: pointer;
 }
 .sign_ok {
-    background-color: #00be33;
+    background-color: #177e33;
 }
 .sign_ok:hover {
-    background-color: #006d1d;
+    background-color: #004d14;
 }
 .sign_no {
     background-color: #be0000;
@@ -72,6 +72,8 @@
 /*가입 정보 입력창*/
 #sign_mainsec {
     display: none;
+    height: calc(100vh - 262px);
+    min-height: 780px;
 }
 #sign_mainsec #sign_input {
     width: calc(100% - 30px);

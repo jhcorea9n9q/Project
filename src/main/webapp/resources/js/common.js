@@ -13,7 +13,7 @@ var lang = lang_storage();
 // 메뉴리스트 언어변경
 var lan_li = function(pageNo){
     $.ajax({
-        url: "json/common.json"
+        url: "/page/json/common.json"
     }).done(function(d){
         $("title").text(d.titleData[pageNo][lang]);
         $("#cg_lan p").text(d.lanData[lang]);
@@ -35,17 +35,17 @@ var lan_bnt = function(){
         (lang==0)?lang=1:lang=0;
         sessionStorage.setItem("gd_lang", lang);
         if(pageNo==0){
-            location.href='main.html';
+            location.href='/page/main.html';
         }else if(pageNo==3){
-            location.href='signup.html';
+            location.href='/page/signup.html';
         }else if(pageNo==4){
-            location.href='login.html';
+            location.href='/page/login.html';
         }else if(pageNo==5){
-            location.href='mypage.html';
+            location.href='/page/mypage.html';
         }else if(pageNo==1){
-            location.href="stats.html";
+            location.href="/page/stats.html";
         }else if(pageNo==2){
-            location.href="review.html";
+            location.href="/page/review.html";
         }
     });
 }
@@ -65,14 +65,14 @@ var logintoggle = function(pageNo){
             $(".inPage").hide();
             if(pageNo==5){
                 alert(a_notAllow);
-                location.href = "main.html";
+                location.href = "/page/main.html";
             }
         }else if(d.userSession!=null){
             $(".outPage").hide();
             $(".inPage").show();
             if(pageNo==3||pageNo==4){
                 alert(a_notAllow);
-                location.href = "main.html";
+                location.href = "/page/main.html";
             }else if(pageNo==5){
                 myPageCss(d.userSession);
             }
