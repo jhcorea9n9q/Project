@@ -33,52 +33,43 @@ $(document).ready(function(){
     <li id="page5" class="f_r inPage"><a href="/page/mypage.html"></a></li>
     <span id="cg_lan" class="bc_w f_r"><p></p></span>
 </ul>
-<!--/글쓰기/
-        [제목]
-        [영화명]
-        [평점:?]
-        [내용]-->
 <section class="dp_i f_l give_pad">
     <h2 class="dp_i f_l">리뷰 게시판</h2>
-<!--    <div id="rev" class="dp_i f_l give_pad">
+        <div id="revInsert" class="dp_i f_l give_pad">
+            <form id='insertForm'>
+                <input type='text' name='revTitle' id='revTitle' class='inClass' placeholder='제목을 입력해 주십시오.' maxlength="30" required><br>
+                <div id='movieSector'>
+                    <input type='text' name='movieTitle' id='movieTitle' placeholder='영화 제목을 입력해 주십시오.' maxlength="30" class="dp_i f_l" required>
+                    <select name='movieGrade' placeholder='평점을 매겨주십시오.' id='movieGrade' class="dp_i f_l">
+                        <option value="1">★☆☆☆☆</option>
+                        <option value="2">★★☆☆☆</option>
+                        <option value="3">★★★☆☆</option>
+                        <option value="4">★★★★☆</option>
+                        <option value="5">★★★★★</option>
+                    </select><br>
+                </div>
+                <textarea name='revContents' id='revContents' class='inClass' placeholder="리뷰 내용을 입력해 주십시오." maxlength="500"></textarea><br>
+                <button type="submit">완료!</button>
+            </form>
+        </div>
+        <hr>
+    <div id="revDetails" class="dp_i f_l give_pad">
         <div id="revHeader">
-            <h2>토이 스토리</h2>
-            <span>★★★★☆4</span>
-            <h3>인상깊었던 영화를 다시 보면서 느낀점입니다.</h3>
+            <h2></h2>
+            <span></span>
+            <h3></h3>
         </div>
         <hr>
         <div id="revInfo">
-            <p>작성자 : <span>구디맨</span></p>
-            <p>조회수 : <span>515</span></p>
-            <p>추천수 : <span>34</span></p>
-            <p>작성일 : <span>2018-08-25</span></p>
+            <p>작성자 : <span></span></p>
+            <p>조회수 : <span></span></p>
+            <p>추천수 : <span></span></p>
+            <p>작성일 : <span></span></p>
         </div>
         <hr>
-        <div id="revMain">
-            아주 좋은 영화입니다.
-        </div>
-        <div id="revFooter">
-            <button type="button">추천</button>
-            <button type="button">비추천</button>
-        </div>
-        <hr>
-        <div id="revInsertComm">
-            <textarea placeholder="덧글을 입력해 주십시오."></textarea>
-            <button type="button">입력</button>
-            <button type="button">입력 후 추천</button>
-        </div>
-        <div id="revCommentList">
-            <table>
-                <tr>
-                    <td>구디친구</td>
-                    <td>많이 공감합니다!</td>
-                    <td>2018-08-25</td>
-                    <td><button type="button">답글달기</button></td>
-                </tr>
-            </table>
-        </div>
+        <div id="revMain"></div>
     </div>
-    <hr>-->
+    <hr>
     <div id="revList" class="dp_i f_l">
         <table></table>
     </div>
@@ -87,7 +78,7 @@ $(document).ready(function(){
         <table>
             <tr>
                 <td>◀</td>
-                <td>1</td>
+<!--                <td>1</td>
                 <td>2</td>
                 <td>3</td>
                 <td>4</td>
@@ -96,7 +87,7 @@ $(document).ready(function(){
                 <td>7</td>
                 <td>8</td>
                 <td>9</td>
-                <td>10</td>
+                <td>10</td>-->
                 <td>▶</td>
             </tr>
         </table>
@@ -113,7 +104,7 @@ $(document).ready(function(){
         <button type="button" disabled>검색!</button>
     </div>
     <div id="insertBtn" class="dp_i f_l">
-        <button type="button" class="f_r" disabled>글쓰기</button>
+        <button type="button" class="f_r">글쓰기</button>
     </div>
 </section>
 </body>

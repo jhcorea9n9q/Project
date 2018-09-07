@@ -45,7 +45,7 @@ var lan_bnt = function(){
         }else if(pageNo==1){
             location.href="/page/stats.html";
         }else if(pageNo==2){
-            location.href="/page/review.html";
+            location.href="/reviewBoard";
         }
     });
 }
@@ -66,6 +66,8 @@ var logintoggle = function(pageNo){
             if(pageNo==5){
                 alert(a_notAllow);
                 location.href = "/page/main.html";
+            }else if(pageNo==2){
+                wantInsert(0);
             }
         }else if(d.userSession!=null){
             $(".outPage").hide();
@@ -75,6 +77,8 @@ var logintoggle = function(pageNo){
                 location.href = "/page/main.html";
             }else if(pageNo==5){
                 myPageCss(d.userSession);
+            }else if(pageNo==2){
+                wantInsert(1, d.userSession);
             }
         }
     });

@@ -8,4 +8,8 @@ public interface BoardServiceInterface {
 	
 	public HashMap<String, Object> boardList(HttpServletRequest req);
 	
+	public HashMap<String, Object> boardIn(HttpServletRequest req);
+	
+	public HashMap<String, Object> boardDetail(int boardNo);
+	
 }

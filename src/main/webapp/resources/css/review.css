@@ -62,7 +62,7 @@ table {
     height: 30px;
 }
 
-/*글쓰기*/
+/*글쓰기 버튼*/
 #insertBtn {
     width: 100%;
     margin-bottom: 20px;
@@ -71,4 +71,92 @@ table {
     margin: 9px 15px 20px 5px;
     padding: 5px 10px;
     height: 30px;
+}
+
+/*글쓰기 메뉴*/
+#revInsert {
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    text-align: center;
+    display: none;
+}
+.inClass {
+    width: 80%;
+    padding: 25px;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+#revTitle {
+    height: 20px;
+    font-size: 20px;
+}
+#movieSector {
+    width: 80%;
+    margin-bottom: 30px;
+    margin-left: 10%;
+    height: 100px;
+}
+#movieTitle {
+    width: 60%;
+    padding: 25px;
+    height: 18px;
+    margin-right: 8%;
+    font-size: 20px;
+}
+#movieGrade {
+    width: 25%;
+    padding: 15px;
+    font-size: 20px;
+}
+#revContents {
+    height: 500px;
+    resize: none;
+    font-size: 20px;
+}
+#revInsert button {
+    font-size: 20px;
+    margin: 10px 0;
+    padding: 6px 15px;
+    color: white;
+    border: none;
+    background-color: #177e33;
+}
+#revInsert button:hover {
+    cursor: pointer;
+    background-color: #004d14;
+}
+
+/*글보기 메뉴*/
+#revDetails {
+    width: calc(100%-2px);
+    margin-top: 25px;
+    margin-bottom: 50px;
+    background-color: white;
+    border: black solid 1px;
+    display: none;
+}
+#revHeader {
+    width: 80%;
+    padding: 20px 10%;
+}
+#revHeader h2 {
+    margin-bottom: 10px;
+}
+#revHeader span {
+    margin-bottom: 10px;
+}
+#revHeader h3 {
+    margin-bottom: 10px;
+}
+#revInfo {
+    width: 80%;
+    padding: 20px 10%;
+}
+#revMain {
+    width: 80%;
+    padding: 20px 10%;
+}
+.clickDetail:hover {
+    cursor: pointer;
 }

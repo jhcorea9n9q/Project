@@ -3,10 +3,39 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="board">
+	<!-- 게시판 리스트 뿌리기 -->
 	<select id="boardList" parameterType="HashMap" resultType="HashMap">
 		select rb.*, ul.nickName, rm.movieTitle from reviewboard as rb
 		inner join reviewmovielist as rm on rm.movieNo = rb.movieNo
 		inner join userlist as ul on ul.userNo = rb.userNo
-		and rb.delYn = 'N' limit #{limit}, 10;
+		and rb.delYn = 'N' order by rb.boardNo desc limit #{limit}, 10;
 	</select>
+	
+	<!-- 게시글 작성 시 같은 이름의 영화가 있나 체크 -->
+	<select id="movieCheck" parameterType="HashMap" resultType="HashMap">
+		select `movieNo` from reviewmovielist where `movieTitle` = #{movieTitle};
+	</select>
+	
+	<!-- 게시글 작성 -->
+	<insert id="boardIn" parameterType="HashMap">
+		insert into reviewboard(`userNo`, `movieNo`, `movieGrade`, `revTitle`, `revContents`) values(#{userNo}, #{movieNo}, #{movieGrade}, #{revTitle}, #{revContents});
+	</insert>
+	
+	<!-- 같은 이름의 영화가 없을 시 영화 테이블에 새 내용 만들어주기 -->
+	<insert id="boardIn2" parameterType="HashMap">
+		insert into reviewmovielist(`movieTitle`) values(#{movieTitle});
+	</insert>
+	
+	<!-- 게시글 정보 불러오기 -->
+	<select id="boardDetail" parameterType="HashMap" resultType="HashMap">
+		select rb.*, ul.*, rm.movieTitle from reviewboard as rb
+		inner join reviewmovielist as rm on rm.movieNo = rb.movieNo
+		inner join userlist as ul on ul.userNo = rb.userNo
+		and rb.delYn = 'N' and rb.boardNo = #{boardNo}
+	</select>
+	
+	<!-- 조회수 상승 -->
+	<update id="visitCount" parameterType="HashMap">
+		update `reviewboard` set `visitCount` = `visitCount` + 1 where `boardNo` = #{boardNo} and `delYn` = 'N';
+	</update>
 </mapper>
